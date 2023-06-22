@@ -22,12 +22,10 @@ const murkup = galleryItems
 
 galleryRef.innerHTML = murkup;
 
-//const lightbox = new SimpleLightbox('.gallery a', { 
- // captionsData: 'alt',
-//  captionDelay: 250,
-//});
-//lightbox.open();
-let gallery = $('.gallery a').simpleLightbox();
-gallery.on('show.simplelightbox', function () {
-	console.log(gallery);
+let gallery = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 250,
 });
+gallery.on('show.simplelightbox');
+
+
