@@ -5,8 +5,6 @@ console.log(galleryItems);
 
 const galleryRef = document.querySelector('.gallery');
 
-galleryRef.addEventListener('click', onOpenCloseOriginalImg);
-
 
 const murkup = galleryItems
   .map(({preview, original, description}) => {
@@ -24,12 +22,8 @@ const murkup = galleryItems
 
 galleryRef.innerHTML = murkup;
 
-
-function onOpenCloseOriginalImg(event) {
-  const lightbox = new SimpleLightbox('.gallery a', { 
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-  event.preventDefault();
-  lightbox.open(event);
-}
+const lightbox = new SimpleLightbox('.gallery a', { 
+  captionsData: 'alt',
+  captionDelay: 250,
+});
+lightbox.open();
